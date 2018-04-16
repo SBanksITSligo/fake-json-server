@@ -13,7 +13,6 @@ export class AddCarComponent implements OnInit {
   constructor() { }
 
   addCar(make:string, model:string,year:string,imageUrl:string):boolean {
-    console.log("AddCarComponent: in addCar...")
     let tempCar = new Car(make,model,year,imageUrl);  
     this.addCarEE.emit(tempCar);
     return false;
