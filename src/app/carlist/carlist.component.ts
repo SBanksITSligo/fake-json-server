@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarApiService } from '../services/car-api.service';
+import { Car } from '../car';
 
 @Component({
   selector: 'app-carlist',
@@ -8,12 +9,20 @@ import { CarApiService } from '../services/car-api.service';
   providers: [CarApiService]
 })
 export class CarlistComponent implements OnInit {
+  showForm:boolean = false;
   carsData: ICar[];
   constructor(private _carAPIService: CarApiService) { }
 
   ngOnInit() {
     this._carAPIService.getCarData().subscribe(carsData =>
        { this.carsData = carsData });
+  }
+
+  addTheCar(make:string, model:string,year:string,imageUrl:string): boolean{
+    let tempCar:ICar;
+    tempCar = new Car(make,model,year,imageUrl);  
+    this.carsData.push(tempCar);
+    return false;
   }
 
 }

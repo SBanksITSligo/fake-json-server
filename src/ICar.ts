@@ -7,6 +7,7 @@ interface ICar
     quality: ICarQuality[];
 }
 
+
 interface ICarQuality
 {
     name: string;

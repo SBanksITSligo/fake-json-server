@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CarApiService {
 
-  private _siteURL = 'http://localhost:3000/car_data';
+  private _siteURL = 'http://localhost:3000/car_data'; 
 
   constructor(private _http: HttpClient) { }
 

@@ -6,5 +6,31 @@
     <h4><i>A name you can trust</i></h4>
   </div>
 </h2>
+<div class="ui raised segment">
+    <div class="ui right floated">
+        <i class="plus circle icon large"></i>
+      </div>
+
+  <form class="ui form">
+  <div class="field">
+    <label>Make</label>
+    <input type="text" name="make" placeholder="Enter Make" #make>
+  </div>
+  <div class="field">
+    <label>Model</label>
+    <input type="text" name="model" placeholder="Enter Model" #model>
+  </div>
+  <div class="field">
+    <label>Year</label>
+    <input type="text" name="year" placeholder="Enter Year" #year>
+  </div>
+  <div class="field">
+    <label>Image</label>
+    <input type="text" name="imageURL" placeholder="Enter Link to Image" #imageUrl>
+  </div>
+  <button class="ui primary button" type="submit" (click)="addTheCar(make.value, model.value,year.value,imageUrl.value)">Add the Car</button>
+  <button class="ui button" type="reset">Cancel</button>
+</form>
+</div>
 <app-car *ngFor="let carData of carsData"
 [carData]="carData"></app-car> 
