@@ -9,7 +9,6 @@ import { Car } from '../car';
   providers: [CarApiService]
 })
 export class CarlistComponent implements OnInit {
-  showForm:boolean = false;
   carsData: ICar[];
   constructor(private _carAPIService: CarApiService) { }
 
@@ -18,11 +17,15 @@ export class CarlistComponent implements OnInit {
        { this.carsData = carsData });
   }
 
-  addTheCar(make:string, model:string,year:string,imageUrl:string): boolean{
-    let tempCar:ICar;
-    tempCar = new Car(make,model,year,imageUrl);  
-    this.carsData.push(tempCar);
-    return false;
+  addCar(evt){
+    this.carsData.push(evt);
   }
+
+  // addTheCar(make:string, model:string,year:string,imageUrl:string): boolean{
+  //   let tempCar:ICar;
+  //   tempCar = new Car(make,model,year,imageUrl);  
+  //   this.carsData.push(tempCar);
+  //   return false;
+  // }
 
 }
