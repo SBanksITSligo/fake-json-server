@@ -11,6 +11,12 @@ carImageWidth:number = 300;
 
   constructor() { }
 
+  addReview(review:string):boolean{
+    console.log("CarComponent: addReview: review = "+review)
+    this.carData.myReview=review;
+    return false;
+  }
+
   ngOnInit() {
   }
 
